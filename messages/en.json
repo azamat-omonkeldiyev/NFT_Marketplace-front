@@ -1,0 +1,17 @@
+
+{
+    "HeadersContent":{
+        "navItem1":"Marketplace",
+        "navItem2":"Rankings",
+        "navItem3":"Connect a wallet",
+        "button":"Sign Up"
+    },
+    "HeroContent":{
+        "title":"Discover digital art & Collect NFTs",
+        "text":"NFT marketplace UI created with Anima for Figma. Collect, buy and sell art from more than 20k NFT artists.",
+        "buttonContent":"Get Started",
+        "totalSale":"Total Sale",
+        "auctions":"Auctions",
+        "artists":"Artists"
+    }
+}
