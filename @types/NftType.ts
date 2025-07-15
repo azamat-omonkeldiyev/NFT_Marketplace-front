@@ -1,3 +1,6 @@
+import { ArtistType } from "./ArtistType";
+import { AuctionType } from "./AuctionType";
+
 export interface NftType {
   id: string;
   title: string;
@@ -8,4 +11,10 @@ export interface NftType {
   updatedAt: string;
   creatorId: string;
   ownerId: string;
+}
+
+export interface NftType2 extends NftType {
+  creator:ArtistType,
+  owner:ArtistType,
+  auctions:AuctionType[]
 }

@@ -1,9 +1,9 @@
 import { MenuIcon, UserIcon } from "@/assets/icons"
 import Button from "@/components/Button"
 import Image from "next/image"
-import LangConfig from "./LangConfig"
 import { Link } from "@/i18n/navigation"
 import { useTranslations } from "next-intl"
+import LangConfig from "./LangConfig"
 
 const Header = () => {
   const t = useTranslations("HeadersContent")
