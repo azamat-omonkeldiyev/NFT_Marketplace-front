@@ -1,20 +1,20 @@
-import { NftType2 } from '@/@types/NftType'
+import { NftType, NftType2 } from '@/@types/NftType'
 import { API } from '@/hooks/getEnv'
 import Image from 'next/image'
 import React, { FC } from 'react'
 import Heading from './Heading'
 import Text from './Text'
 
-const NftCard: FC<{ item: NftType2 }> = ({ item }) => {
+const NftCard: FC<{ item: NftType2 | NftType, name?:string, imgURL?:string, id?:string }> = ({ item, name, imgURL, id }) => {
     return (
-        <div className='w-[330px] bg-[#FFFFFF1A] rounded-[20px] overflow-hidden'>
+        <div className={`w-[330px] ${name ? "bg-[#2B2B2B]" : "bg-[#FFFFFF1A]"} rounded-[20px] overflow-hidden`}>
             <Image className='w-[330px] h-[296px]' src={`${API}/file/${item.image}`} alt='Category img' width={330} height={296} priority />
             <div className='py-[20px] px-[30px]'>
                 <div className='mb-[25px]'>
                     <Heading classList='!text-[22px] !mb-[5px]' tag='h3'>{item.title}</Heading>
                     <div className='flex items-center gap-[12px]'>
-                        <Image className='w-[24px] h-[24px] rounded-full' src={`${API}/file/${item.creator.image}`} alt='Creator img' width={24} height={24} priority />
-                        <Text>{item.creator.username}</Text>
+                        <Image className='w-[24px] h-[24px] rounded-full' src={`${API}/file/${imgURL ? imgURL : (item as NftType2).creator.image}`} alt='Creator img' width={24} height={24} priority />
+                        <Text>{name ? name : (item as NftType2).creator.username}</Text>
                     </div>
                 </div>
                 <div className='flex justify-between'>

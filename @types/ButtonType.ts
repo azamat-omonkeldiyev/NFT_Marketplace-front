@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { MouseEvent, ReactNode } from "react";
 
 export interface ButtonType {
     icon?:ReactNode,
@@ -6,5 +6,6 @@ export interface ButtonType {
     title:string,
     type:"submit" | "button",
     extraClass?:string,
-    variant:"filled" | "outlined"
+    variant:"filled" | "outlined",
+    onClick?:(e:MouseEvent<HTMLButtonElement>) => void
 }
